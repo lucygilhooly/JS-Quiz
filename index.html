@@ -1,12 +1,28 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lucys Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.scss" />
+  </head>
+  <body>
+    
+      <div class="container__question hide">
+        <div id="question">Welcome to Lucys Quiz!</div>
+        <div id="container__btns" class="btn-grid">
+          <button class="btn">answer 1</button>
+          <button class="btn">answer 2</button>
+          <button class="btn">answer 3</button>
+          <button class="btn">answer 4</button>
+        </div>
+      </div>
+      <div class="control-btns">
+        <button id="home-btn" class="home-btn btn">⌂</button>
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
+  
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
