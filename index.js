@@ -1,4 +1,39 @@
-//when u visit website we want to have a homescreen with a button reading 'click here to play!'
+//CLICK TO PLAY BUTTON
+//FIRST, grab from HTML
+
+const playButton = document.querySelector('#start-btn');
+const questionContainer = document.querySelector(".container__question");
+
+//then, create a function for it to perform
+// so here the screen will clear and the title will be replaced with a question 
+const startGame = () => {
+    console.log("let the games begin!")
+    playButton.classList.add('hide');
+    questionContainer.classList.remove('hide');
+    setNextQuestion()
+
+}
+
+//& then create an event listener so when button is pressed the function is executed 
+playButton.addEventListener("click", startGame);
+
+
+// and the button will be replaced with 4 buttons with multi choice answers !!!
+
+
+//QUESTIONS 
+
+//const setNextQuestion() => {
+    
+//}
+
+// const selectAnswer() => {
+
+// }
+
+
+
+
 
 // will need a function which changes the screen to the next (can possibly be reused when hitting the next question button)
 
