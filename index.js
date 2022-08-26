@@ -16,31 +16,44 @@ let currentQuestionIndex = undefined
 const startGame = () => {
     console.log("let the games begin!")
     playButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() ); //possibly add in -.5, to give us a number above or below zero 50% of the time. Unsure if necessary
-    currentQuestionIndex = 0 ;
+    shuffledQuestions = questions.sort(() => Math.random()); //possibly add in -.5, to give us a number above or below zero 50% of the time. Unsure if necessary
+    currentQuestionIndex = 0;
     questionContainer.classList.remove('hide');
     setNextQuestion()
 }
 
 //& then create an event listener so when button is pressed the function is executed 
 playButton.addEventListener("click", startGame);
-
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++ ; 
+    setNextQuestion();
+})
 
 // and the button will be replaced with 4 buttons with multi choice answers !!!
 
 
 //QUESTIONS 
 
-const questions = [
-    {question: "what is my name",
-        answers: [
-            { text: 'Lucy', correct: true },
-            { text: 'Sam', correct: false },
-            {text: 'Lottie', correct: false},
-            {text: 'Andrew', correct: false}
-            ]
-    }
-]
+const questions = [{
+    question: "what is my name",
+    answers: [{
+            text: 'Lucy',
+            correct: true
+        },
+        {
+            text: 'Sam',
+            correct: false
+        },
+        {
+            text: 'Lottie',
+            correct: false
+        },
+        {
+            text: 'Andrew',
+            correct: false
+        }
+    ]
+}]
 
 
 const setNextQuestion = () => {
@@ -64,6 +77,7 @@ const showQuestion = (question) => {
 }
 
 const resetState = () => {
+    clearAnswerResult(document.body);
     nextButton.classList.add('hide');
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
@@ -74,17 +88,36 @@ const resetState = () => {
 const selectAnswer = (event) => {
     const selectedButton = event.target;
     const correct = selectedButton.dataset.correct;
+    setAnswerResult(document.body, correct);
+    Array.from(answerButtons.children).forEach(button => {
+        setAnswerResult(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide');
+    } else {
+        playButton.innerText = 'Restart';
+        playButton.classList.remove('hide');
+    }
+   
 }
 
 
+const setAnswerResult = (element, correct) => {
+    clearAnswerResult(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
+
+}
 
 
+const clearAnswerResult = (element) => {
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
+}
 
-// will need a function which changes the screen to the next (can possibly be reused when hitting the next question button)
-
-// question screen should display an image and 4 options, one of them being correct. 
-// will store all questions within an array as objects
-//if else statement with booleans for correct or incorrect answers 
 
 
 //figure out how to keep score? 
@@ -94,4 +127,3 @@ const selectAnswer = (event) => {
 
 
 //also want a home button to permanantly be displayed at the top 
-
