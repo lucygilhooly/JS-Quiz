@@ -51,3 +51,11 @@ body {
 .hide {
   display: none;
 }
+
+.correct {
+  background-color: #6ce16c;
+}
+
+.wrong {
+  background-color: red;
+}
