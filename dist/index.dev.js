@@ -1,5 +1,9 @@
 "use strict";
 
+//import array from separate sheet - gots to keep her tidy
+// import {
+//     questions
+// } from './questions.js';
 //CLICK TO PLAY BUTTON
 //FIRST, grab from HTML
 var playButton = document.querySelector('#start-btn');
@@ -13,7 +17,6 @@ var currentQuestionIndex = undefined; //then, create a function for it to perfor
 // so here the screen will clear and the title will be replaced with a question 
 
 var startGame = function startGame() {
-  console.log("let the games begin!");
   playButton.classList.add('hide');
   shuffledQuestions = questions.sort(function () {
     return Math.random();
@@ -33,7 +36,7 @@ nextButton.addEventListener("click", function () {
 //QUESTIONS 
 
 var questions = [{
-  question: "what is my name",
+  question: "What is my Name?",
   answers: [{
     text: 'Lucy',
     correct: true
@@ -45,6 +48,51 @@ var questions = [{
     correct: false
   }, {
     text: 'Andrew',
+    correct: false
+  }]
+}, {
+  question: 'where am I from?',
+  answers: [{
+    text: 'London',
+    correct: false
+  }, {
+    text: 'Edinburgh',
+    correct: false
+  }, {
+    text: 'Machester',
+    correct: false
+  }, {
+    text: 'Glasgow',
+    correct: true
+  }]
+}, {
+  question: 'how old am I?',
+  answers: [{
+    text: '21',
+    correct: false
+  }, {
+    text: '23',
+    correct: true
+  }, {
+    text: '30',
+    correct: false
+  }, {
+    text: '18',
+    correct: false
+  }]
+}, {
+  question: 'how tall am I?',
+  answers: [{
+    text: '5ft5',
+    correct: false
+  }, {
+    text: '5ft2',
+    correct: false
+  }, {
+    text: '5ft9',
+    correct: true
+  }, {
+    text: '6ft',
     correct: false
   }]
 }];

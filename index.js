@@ -1,3 +1,9 @@
+//import array from separate sheet - gots to keep her tidy
+
+// import {
+//     questions
+// } from './questions.js';
+
 //CLICK TO PLAY BUTTON
 //FIRST, grab from HTML
 
@@ -14,7 +20,6 @@ let currentQuestionIndex = undefined
 //then, create a function for it to perform
 // so here the screen will clear and the title will be replaced with a question 
 const startGame = () => {
-    console.log("let the games begin!")
     playButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random()); //possibly add in -.5, to give us a number above or below zero 50% of the time. Unsure if necessary
     currentQuestionIndex = 0;
@@ -25,7 +30,7 @@ const startGame = () => {
 //& then create an event listener so when button is pressed the function is executed 
 playButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex++ ; 
+    currentQuestionIndex++;
     setNextQuestion();
 })
 
@@ -35,25 +40,86 @@ nextButton.addEventListener("click", () => {
 //QUESTIONS 
 
 const questions = [{
-    question: "what is my name",
-    answers: [{
-            text: 'Lucy',
-            correct: true
-        },
-        {
-            text: 'Sam',
-            correct: false
-        },
-        {
-            text: 'Lottie',
-            correct: false
-        },
-        {
-            text: 'Andrew',
-            correct: false
-        }
-    ]
-}]
+        question: "What is my Name?",
+        answers: [{
+                text: 'Lucy',
+                correct: true
+            },
+            {
+                text: 'Sam',
+                correct: false
+            },
+            {
+                text: 'Lottie',
+                correct: false
+            },
+            {
+                text: 'Andrew',
+                correct: false
+            }
+        ]
+    },
+    {
+        question: 'where am I from?',
+        answers: [{
+                text: 'London',
+                correct: false
+            },
+            {
+                text: 'Edinburgh',
+                correct: false
+            },
+            {
+                text: 'Machester',
+                correct: false
+            },
+            {
+                text: 'Glasgow',
+                correct: true
+            }
+        ]
+    },
+    {
+        question: 'how old am I?',
+        answers: [{
+                text: '21',
+                correct: false
+            },
+            {
+                text: '23',
+                correct: true
+            },
+            {
+                text: '30',
+                correct: false
+            },
+            {
+                text: '18',
+                correct: false
+            }
+        ]
+    },
+    {
+        question: 'how tall am I?',
+        answers: [{
+                text: '5ft5',
+                correct: false
+            },
+            {
+                text: '5ft2',
+                correct: false
+            },
+            {
+                text: '5ft9',
+                correct: true
+            },
+            {
+                text: '6ft',
+                correct: false
+            }
+        ]
+    },
+]
 
 
 const setNextQuestion = () => {
@@ -98,7 +164,7 @@ const selectAnswer = (event) => {
         playButton.innerText = 'Restart';
         playButton.classList.remove('hide');
     }
-   
+
 }
 
 
