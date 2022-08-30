@@ -7,17 +7,24 @@ body {
     display: flex;
     width: 100vw;
     height:100vh;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    background-color: pink;
+    background-image: linear-gradient(to bottom right,blue, purple,  pink);
+}
+#question {
+    padding-left: 120px;
+    padding-top: 20px;
+
 }
  .container__question{
     width: 800px;
-    max-width: 80%;
+    max-width: 60%;
+    height: 20vh;
     border-radius: 10px;
-    background-color: orange;
-
-}
+    background-color: rgb(196, 153, 236);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
 
 .btn-grid{
     display: grid;
@@ -30,6 +37,8 @@ body {
 .btn {
     border: 2px solid black;
     opacity: 50%;
+    border-radius: 10px;
+   
 }
 
 .btn:hover {
@@ -45,9 +54,8 @@ body {
 }
 .control-btns {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-start;
+    padding: 50px;
 }
 
 .hide{
@@ -56,8 +64,10 @@ body {
 
 .correct {
     background-color: rgb(108, 225, 108);
+    background-image: radial-gradient(circle, pink,  rgb(108, 225, 108),  rgb(108, 225, 108));
 }
 
-.wrong {
-    background-color: red;
+.incorrect {
+    background-image: radial-gradient(circle, orange, red, red);
+   
 }
