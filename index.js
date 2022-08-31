@@ -70,7 +70,7 @@ const questions = [{
                 correct: false
             },
             {
-                text: 'Dolpihns',
+                text: 'Dolphins',
                 correct: false
             },
             {
