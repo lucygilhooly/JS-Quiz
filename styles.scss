@@ -10,14 +10,22 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-image: linear-gradient(to bottom right,rgb(146, 146, 241), rgb(80, 54, 200),  rgb(124, 213, 246));
+    background-image: linear-gradient(to bottom right,rgb(185, 215, 238), rgb(70, 161, 226),  rgb(22, 42, 222));
+}
+.heading{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(56, 13, 227);
 }
 
 .home-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
+    width: 60%;
+    height:60%;
 }
 #question {
     display: flex;
@@ -31,7 +39,7 @@ body {
     justify-content: flex-end;
     width: 800px;
     max-width: 60%;
-    height: 50vh;
+    height: 70vh;
     border-radius: 10px;
     background-color: rgb(196, 153, 236);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
