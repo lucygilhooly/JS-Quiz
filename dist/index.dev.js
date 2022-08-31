@@ -11,13 +11,15 @@ var questionContainer = document.querySelector(".container__question");
 var actualQuestion = document.querySelector('#question');
 var answerButtons = document.querySelector('.btn-grid');
 var nextButton = document.querySelector('#next-btn');
-var homeImg = document.querySelector('.home-image'); // new undefined variables to help with ordering questions
+var homeImg = document.querySelector('.home-image');
+var heading = document.querySelector('.heading'); // new undefined variables to help with ordering questions
 
 var shuffledQuestions = undefined;
 var currentQuestionIndex = undefined; //then, create a function for it to perform
 // so here the screen will clear and the title will be replaced with a question 
 
 var startGame = function startGame() {
+  heading.classList.add('hide');
   homeImg.classList.add('hide');
   playButton.classList.add('hide');
   shuffledQuestions = questions.sort(function () {
@@ -176,10 +178,12 @@ var selectAnswer = function selectAnswer(event) {
 };
 
 var setAnswerResult = function setAnswerResult(element, correct) {
+  var score = 0;
   clearAnswerResult(element);
 
   if (correct) {
     element.classList.add('correct');
+    score++;
   } else {
     element.classList.add('incorrect');
   }
