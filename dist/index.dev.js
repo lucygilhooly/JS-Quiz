@@ -60,7 +60,7 @@ var questions = [{
     text: 'Whales',
     correct: false
   }, {
-    text: 'Dolpihns',
+    text: 'Dolphins',
     correct: false
   }, {
     text: 'Eels',
