@@ -13,6 +13,7 @@ const actualQuestion = document.querySelector('#question');
 const answerButtons = document.querySelector('.btn-grid');
 const nextButton = document.querySelector('#next-btn');
 const homeImg = document.querySelector('.home-image');
+const heading = document.querySelector('.heading');
 
 // new undefined variables to help with ordering questions
 let shuffledQuestions = undefined
@@ -21,6 +22,7 @@ let currentQuestionIndex = undefined
 //then, create a function for it to perform
 // so here the screen will clear and the title will be replaced with a question 
 const startGame = () => {
+    heading.classList.add('hide');
     homeImg.classList.add('hide');
     playButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random()); //possibly add in -.5, to give us a number above or below zero 50% of the time. Unsure if necessary
@@ -211,9 +213,11 @@ const selectAnswer = (event) => {
 
 
 const setAnswerResult = (element, correct) => {
+    let score = 0
     clearAnswerResult(element);
     if (correct) {
         element.classList.add('correct');
+        score ++;
     } else {
         element.classList.add('incorrect');
     }
