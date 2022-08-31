@@ -10,13 +10,15 @@ var playButton = document.querySelector('#start-btn');
 var questionContainer = document.querySelector(".container__question");
 var actualQuestion = document.querySelector('#question');
 var answerButtons = document.querySelector('.btn-grid');
-var nextButton = document.querySelector('#next-btn'); // new undefined variables to help with ordering questions
+var nextButton = document.querySelector('#next-btn');
+var homeImg = document.querySelector('.home-image'); // new undefined variables to help with ordering questions
 
 var shuffledQuestions = undefined;
 var currentQuestionIndex = undefined; //then, create a function for it to perform
 // so here the screen will clear and the title will be replaced with a question 
 
 var startGame = function startGame() {
+  homeImg.classList.add('hide');
   playButton.classList.add('hide');
   shuffledQuestions = questions.sort(function () {
     return Math.random();
@@ -36,64 +38,94 @@ nextButton.addEventListener("click", function () {
 //QUESTIONS 
 
 var questions = [{
-  question: "What is my Name?",
+  question: "Which species of shark is the largest fish in the world?",
   answers: [{
-    text: 'Lucy',
+    text: 'Whale Shark',
     correct: true
   }, {
-    text: 'Sam',
+    text: 'Bull Shark',
     correct: false
   }, {
-    text: 'Lottie',
+    text: 'Tiger Shark',
     correct: false
   }, {
-    text: 'Andrew',
+    text: 'Great White Shark',
     correct: false
   }]
 }, {
-  question: 'where am I from?',
+  question: 'Sharks are the sister group or close relatives to which ocean animal?',
   answers: [{
-    text: 'London',
+    text: 'Whales',
     correct: false
   }, {
-    text: 'Edinburgh',
+    text: 'Dolpihns',
     correct: false
   }, {
-    text: 'Machester',
+    text: 'Eels',
     correct: false
   }, {
-    text: 'Glasgow',
+    text: 'Rays',
     correct: true
   }]
 }, {
-  question: 'how old am I?',
+  question: 'Which term refers to group of sharks?',
   answers: [{
-    text: '21',
+    text: 'A School',
     correct: false
   }, {
-    text: '23',
+    text: 'A Shoal',
     correct: true
   }, {
-    text: '30',
+    text: 'A Squad',
     correct: false
   }, {
-    text: '18',
+    text: 'A Sharklet',
     correct: false
   }]
 }, {
-  question: 'how tall am I?',
+  question: 'Approximately how long have sharks been existing on Earth?',
   answers: [{
-    text: '5ft5',
+    text: '10,000 years',
     correct: false
   }, {
-    text: '5ft2',
+    text: '40 billion years',
     correct: false
   }, {
-    text: '5ft9',
+    text: '350 million years',
     correct: true
   }, {
-    text: '6ft',
+    text: '2 million years',
     correct: false
+  }]
+}, {
+  question: 'Who directed the 1975 thriller movie "Jaws"?',
+  answers: [{
+    text: 'Steven Spielberg',
+    correct: true
+  }, {
+    text: 'Quentin Tarantino ',
+    correct: false
+  }, {
+    text: 'David Fincher',
+    correct: false
+  }, {
+    text: 'Alfred Hitchcock',
+    correct: false
+  }]
+}, {
+  question: 'Which of the following is true about bull sharks?',
+  answers: [{
+    text: 'they eat plants',
+    correct: false
+  }, {
+    text: 'they can survive out of water',
+    correct: false
+  }, {
+    text: 'they are known to befriend other species',
+    correct: false
+  }, {
+    text: 'they can survive in fresh water',
+    correct: true
   }]
 }];
 
@@ -159,4 +191,28 @@ var clearAnswerResult = function clearAnswerResult(element) {
 }; //figure out how to keep score? 
 //maybe add function to an event listener that if correct answer is pressed a point is recorded 
 //this would be stored in an array and should be displayed onscreen too
+//<script type="text/javascript">
+// var score = 0;
+// function fsubmit() 
+// {
+//     var correct1 = document.getElementById("a1")
+//     if (correct1.checked === true) 
+//     {
+//         score ++;
+//     }
+//     var correct2 = document.getElementById("b4")
+//     if (correct2.checked === true) 
+//     {
+//         score ++; 
+//     }           
+// }
+// And here
+//</script>
+//<script>
+// var messages = {
+//     6: "Bad luck",
+//     7: "Great job!"
+// }
+// document.getElementById("message").innerHTML = messages[score];
+// </script>
 //also want a home button to permanantly be displayed at the top
